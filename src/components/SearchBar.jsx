@@ -1,3 +1,5 @@
+import { SimpleButton } from "./SimpleButton";
+
 export const SearchBar = ({
   filterText,
   inStockOnly,
@@ -20,6 +22,7 @@ export const SearchBar = ({
         />
         Only show products in stock
       </label>
+      <SimpleButton />
     </form>
   );
 };
