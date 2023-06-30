@@ -1,4 +1,5 @@
-import { SimpleButton } from "./SimpleButton";
+import { Button } from "semantic-ui-react";
+import { useRef } from "react";
 
 export const SearchBar = ({
   filterText,
@@ -6,9 +7,16 @@ export const SearchBar = ({
   onFilterTextChange,
   onInStockOnlyChange,
 }) => {
+  const inputRef = useRef(null);
+
+  const handleClick = () => {
+    inputRef.current.focus();
+  };
+
   return (
     <form>
       <input
+        ref={inputRef}
         type="text"
         value={filterText}
         placeholder="Search..."
@@ -22,7 +30,7 @@ export const SearchBar = ({
         />
         Only show products in stock
       </label>
-      <SimpleButton />
+      <Button type="button" content="focus the input" onClick={handleClick} />
     </form>
   );
 };
