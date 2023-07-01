@@ -1,0 +1,19 @@
+.ui-light {
+  color: #222;
+  background: #fff;
+}
+
+.ui-dark {
+  color: #fff;
+  background: rgb(23, 32, 42);
+}
+
+.button-dark {
+  background: #222;
+  color: yellow;
+}
+
+.button-light {
+  background: #fff;
+  color: #222;
+}

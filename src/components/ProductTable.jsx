@@ -1,7 +1,11 @@
 import { ProductCategoryRow } from "./ProductCategoryRow";
 import { ProductRow } from "./ProductRow";
+import { useContext } from "react";
+import { ThemeContext } from "../App";
 
 export const ProductTable = ({ products, filterText, inStockOnly }) => {
+  const theme = useContext(ThemeContext);
+  const uiClassName = "ui-" + theme;
   const rows = [];
   let lastCategory = null;
 
@@ -28,7 +32,7 @@ export const ProductTable = ({ products, filterText, inStockOnly }) => {
   });
 
   return (
-    <table>
+    <table className={uiClassName}>
       <thead>
         <tr>
           <th>Name</th>

@@ -1,5 +1,6 @@
 import { Button } from "semantic-ui-react";
-import { useRef } from "react";
+import { useContext, useRef } from "react";
+import { ThemeContext } from "../App";
 
 export const SearchBar = ({
   filterText,
@@ -8,13 +9,16 @@ export const SearchBar = ({
   onInStockOnlyChange,
 }) => {
   const inputRef = useRef(null);
+  const theme = useContext(ThemeContext);
+  const searchBarClassName = "ui-" + theme;
+  const buttonClassName = "button-" + theme;
 
   const handleClick = () => {
     inputRef.current.focus();
   };
 
   return (
-    <form>
+    <form className={searchBarClassName}>
       <input
         ref={inputRef}
         type="text"
@@ -30,7 +34,12 @@ export const SearchBar = ({
         />
         Only show products in stock
       </label>
-      <Button type="button" content="focus the input" onClick={handleClick} />
+      <Button
+        type="button"
+        className={buttonClassName}
+        content="focus the input"
+        onClick={handleClick}
+      />
     </form>
   );
 };
