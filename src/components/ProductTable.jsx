@@ -1,9 +1,11 @@
 import { ProductCategoryRow } from "./ProductCategoryRow";
 import { ProductRow } from "./ProductRow";
+import { useSelector } from "react-redux/es/hooks/useSelector";
 import { useContext } from "react";
 import { ThemeContext } from "../App";
 
-export const ProductTable = ({ products, filterText, inStockOnly }) => {
+export const ProductTable = ({ filterText, inStockOnly }) => {
+  const products = useSelector((state) => state.dataLoader);
   const theme = useContext(ThemeContext);
   const uiClassName = "ui-" + theme;
   const rows = [];

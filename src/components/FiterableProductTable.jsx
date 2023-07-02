@@ -2,7 +2,7 @@ import { SearchBar } from "./SearchBar";
 import { ProductTable } from "./ProductTable";
 import { useState } from "react";
 
-export const FilterableProductTable = ({ products }) => {
+export const FilterableProductTable = () => {
   const [filterText, setFilterText] = useState("");
   const [inStockOnly, setInStockOnly] = useState(false);
 
@@ -14,11 +14,7 @@ export const FilterableProductTable = ({ products }) => {
         onFilterTextChange={setFilterText}
         onInStockOnlyChange={setInStockOnly}
       />
-      <ProductTable
-        products={products}
-        filterText={filterText}
-        inStockOnly={inStockOnly}
-      />
+      <ProductTable filterText={filterText} inStockOnly={inStockOnly} />
     </div>
   );
 };
