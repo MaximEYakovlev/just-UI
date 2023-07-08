@@ -4,7 +4,11 @@ import { product } from "./data/data";
 export const dataLoadingSlice = createSlice({
   name: "dataLoader",
   initialState: product,
-  reducers: {},
+  reducers: {
+    add: () => {},
+    edit: () => {},
+    delete: () => {},
+  },
 });
 
 export const {} = dataLoadingSlice.actions;
